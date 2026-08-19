@@ -15,7 +15,7 @@
             
         @endif
     </head>
-    <body class="p-6 bg-gray-800 text-white">
+    <body class="p-6 bg-gray-800 text-white max-w-7xl mx-auto items-center">
         
         <nav class="mb-8 pb-4 border-b border-gray-700">
             <div class="container mx-auto flex justify-between items-center">
