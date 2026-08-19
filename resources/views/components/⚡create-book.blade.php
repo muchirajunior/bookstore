@@ -29,7 +29,7 @@ new class extends Component
 
     <!-- Modal Overlay -->
     @if ($showModal)
-        <div class="fixed inset-0  flex items-center justify-center z-50">
+        <div class="fixed inset-0 backdrop-blur-sm  flex items-center justify-center z-50">
             <!-- Modal Container -->
             <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 p-6 transform transition-all">
                 <!-- Modal Header -->
@@ -51,7 +51,7 @@ new class extends Component
                 </div>
 
                 <!-- Modal Footer -->
-                <div class="flex justify-end gap-3">
+                <div class="flex justify-between gap-3 ">
                     <button 
                         wire:click="closeModal" 
                         class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
