@@ -6,7 +6,6 @@ use App\Models\Book;
 
 new class  extends Component
 {
-    public $name = 'Junior';
 
     public $books = [];
 
@@ -29,17 +28,8 @@ new class  extends Component
 ?>
 
 <div>
-    <header class="w-full flex justify-between">
-        <span>
-            <h2 class="text-xl font-bold">Hello, {{ $this->name }}</h2>
-            <p class="text-gray-300">Here is a list of all books</p>
-        </span>
-
-        <form wire:submit='$refresh'>
-            <span class="mr-2">Name</span>
-            <input class="border border-gray-200 rounded-lg px-2 py-1" wire:model.live.debounce.500ms='name' type="text">
-        </form>
-    </header>
+    
+   <livewire:page-header/>
 
     <div class="grid grid-cols-2 gap-4 justify-between">
         @foreach ($books as $book)
