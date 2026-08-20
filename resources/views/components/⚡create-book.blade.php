@@ -1,6 +1,7 @@
 <?php
 
 use Livewire\Component;
+use App\Models\Book;
 
 new class extends Component
 {
@@ -9,16 +10,21 @@ new class extends Component
     public $author;
     public $rating;
 
-    
-
-    public function openModal()
-    {
+    public function openModal(){
         $this->showModal = true;
     }
 
-    public function closeModal()
-    {
+    public function closeModal(){
         $this->showModal = false;
+    }
+
+    public function confirmAction(){
+        Book::create([
+            'title' => $this->title,
+            'author'=> $this->author,
+            'rating'=> $this->rating,
+        ]);
+        $this->redirect('/');
     }
 };
 ?>
@@ -36,7 +42,7 @@ new class extends Component
     @if ($showModal)
         <div class="fixed inset-0 backdrop-blur-sm  flex items-center justify-center z-50">
             <!-- Modal Container -->
-            <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 p-6 transform transition-all">
+            <div class="bg-gray-200 rounded-xl shadow-2xl w-full max-w-md mx-4 p-6 transform transition-all">
                 <!-- Modal Header -->
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-xl font-semibold text-gray-900">Create Book</h3>
@@ -51,8 +57,13 @@ new class extends Component
                 </div>
 
                 <!-- Modal Body -->
-                <div class="mb-6">
-                    <p class="text-gray-600">You must be the change you wish to see in the world. - Mahatma Gandhi</p>
+                <div class="mb-6 text-black flex flex-col">
+                    <label for="">Title</label>
+                    <input type="text" wire:model='title' class="rounded-lg border border-gray-400 px-2 py-1 mb-3">
+                    <label for="">Author</label>
+                    <input type="text" wire:model='author' class="rounded-lg border border-gray-400 px-2 py-1 mb-3">
+                    <label for="">Rating</label>
+                    <input type="number" maxlength="2" wire:model='rating' class="rounded-lg border border-gray-400 px-2 py-1">
                 </div>
 
                 <!-- Modal Footer -->
