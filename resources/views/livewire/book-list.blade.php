@@ -28,8 +28,8 @@ new class  extends Component
 ?>
 
 <div>
-    
-   <livewire:page-header/>
+
+   <livewire:page-header subtitle='Here is a list of all the books' />
 
     <div class="grid grid-cols-2 gap-4 justify-between">
         @foreach ($books as $book)

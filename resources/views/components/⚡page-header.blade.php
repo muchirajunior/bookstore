@@ -4,8 +4,13 @@ use Livewire\Component;
 
 new class extends Component
 {
-    
     public $name = 'Junior';
+
+    public $subtitle;
+
+    public function mount($subtitle){
+        $this->subtitle = $subtitle;
+    }
 };
 ?>
 
@@ -13,7 +18,7 @@ new class extends Component
     <header class="w-full flex justify-between">
         <span>
             <h2 class="text-xl font-bold">Hello, {{ $this->name }}</h2>
-            <p class="text-gray-300">Here is a list of all books</p>
+            <p class="text-gray-300">{{ $subtitle }}</p>
         </span>
 
         <form wire:submit='$refresh'>

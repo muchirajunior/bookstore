@@ -5,6 +5,11 @@ use Livewire\Component;
 new class extends Component
 {
     public $showModal = false;
+    public $title;
+    public $author;
+    public $rating;
+
+    
 
     public function openModal()
     {
