@@ -19,7 +19,7 @@
         
         <nav class="mb-8 pb-4 border-b border-gray-700">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-bold text-blue-400">My Books</h1>
+                <h1 class="text-3xl font-bold">My Books</h1>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-blue-300 transition-colors">Home</a>
                    <livewire:create-book/>

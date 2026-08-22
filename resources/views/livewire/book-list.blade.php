@@ -34,11 +34,11 @@ new class  extends Component {
 
    <livewire:page-header subtitle='Here is a list of all the books' />
 
-   <div class="flex justify-end items-center">
+   <div class="flex justify-center items-center">
         <input 
             type="text",
-            class="rounded border border-gray-200 px-2 py-1 focus:outline-none "
-            placeholder="Search books"
+            class="rounded-lg border border-gray-100 px-4 py-2 focus:border-none mb-1 w-100"
+            placeholder="Live Search Book by Title"
             wire:model.live.debounce.500ms='searchKey'
             wire:click="populateBooks"
         />
