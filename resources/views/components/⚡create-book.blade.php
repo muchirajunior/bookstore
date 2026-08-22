@@ -29,7 +29,7 @@ new class extends Component
             'author'=> $this->author,
             'rating'=> $this->rating,
         ]);
-        $this->redirect('/');
+        $this->redirect('/',navigate:true);
     }
 };
 ?>
