@@ -19,6 +19,11 @@ new class extends Component
     }
 
     public function confirmAction(){
+        $this->validate([
+            'title' => 'string|required|min:3|max:50',
+            'author'=> 'string|required|min:3|max:50',
+            'rating'=> 'integer|required|min:1|max:10',
+        ]);
         Book::create([
             'title' => $this->title,
             'author'=> $this->author,
@@ -60,10 +65,19 @@ new class extends Component
                 <div class="mb-6 text-black flex flex-col">
                     <label for="">Title</label>
                     <input type="text" wire:model='title' class="rounded-lg border border-gray-400 px-2 py-1 mb-3">
+                    @error('title')
+                        <div class="text-red-500"> {{ $message }} </div>
+                    @enderror
                     <label for="">Author</label>
                     <input type="text" wire:model='author' class="rounded-lg border border-gray-400 px-2 py-1 mb-3">
+                      @error('author')
+                        <div class="text-red-500"> {{ $message }} </div>
+                    @enderror
                     <label for="">Rating</label>
                     <input type="number" maxlength="2" wire:model='rating' class="rounded-lg border border-gray-400 px-2 py-1">
+                      @error('rating')
+                        <div class="text-red-500"> {{ $message }} </div>
+                    @enderror
                 </div>
 
                 <!-- Modal Footer -->
